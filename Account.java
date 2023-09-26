@@ -79,4 +79,5 @@ public class Account {
     public static void updateDetails() {
         // Implementation of updateDetails
     }
-}
+
+} // end of class Account

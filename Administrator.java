@@ -1,9 +1,11 @@
 public class Administrator extends Account {
     
     
+    public void manageCourseAccess(){}
+
     public void sendAutomatedEmail(){}
 
     public void accessStudentDetails(int accountID){}
     
-    public void manageCourseAccess(){}
-}
+
+} // end of class Administrator 
