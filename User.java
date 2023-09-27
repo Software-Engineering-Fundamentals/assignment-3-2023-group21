@@ -1,34 +1,29 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class User {
     
-    public void enrolCourse(){}
+    private ArrayList<Enquiry> userEnquiries = new ArrayList<>();
+    private Manager manager;
 
-    public void registerCourse(){}
+    User(Manager manager) {
+        this.manager = manager;
+    }
 
     public void lodgeEnquiry(){
 
-        // If user input is expected, use the code below:
-        // System.out.println("Please enter your enquiry:");
-
-        // String userEnquiry1 = "";
-        // Scanner scnr = new Scanner(System.in);
-        
-        // while(scnr.hasNext()){
-        //     String s = scnr.next();
-        //     userEnquiry1 = userEnquiry1 + s;
-        // }
-        // scnr.close();
-
-        // Should we have to randomly generate an ID for each enquiry?
-        // Enquiry newEnquiryInput = new Enquiry(1, userEnquiry1); 
-        // System.out.println(newEnquiryInput.get);
-
-
-        // If user input is NOT expected,, use the code below:
-        String userEnquiry2 = "...This is an enquiry created by User class...";
-        Enquiry newEnquiryNoInput = new Enquiry(1, userEnquiry2);
-
+        String userEnquiry = "...This is an enquiry created by a User...";
+        int enquiryID = userEnquiries.size() + 1;
+        Enquiry newEnquiry = new Enquiry(enquiryID, userEnquiry);
+        userEnquiries.add(newEnquiry);
+        manager.receiveEnquiries(userEnquiries);
     }
+
+    public int getEnquiryID() {
+        return userEnquiries.size() + 1;
+    }
+
+    public void enrolCourse(){}
+
+    public void registerCourse(){}
 
 } // end of class User 

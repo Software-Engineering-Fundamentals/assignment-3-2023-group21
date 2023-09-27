@@ -6,9 +6,17 @@ public class Main {
 
     // Instantiates User class and creates user enquiry
     public static void createEnquiry(){
-        // Enquiry enquiry = new Enquiry();
-        User newUser = new User();
+        
+        Manager manager = new Manager(); // Create one manager instance 
+        
+        User newUser = new User(manager);
+
         newUser.lodgeEnquiry();
+
+        int enquiryID = newUser.getEnquiryID();
+
+        // Pass the enquiryID to the Manager to search for the enquiry
+        manager.searchEnquiries(enquiryID);
 
     }
 
