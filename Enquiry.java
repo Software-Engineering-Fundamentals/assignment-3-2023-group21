@@ -9,6 +9,14 @@ public class Enquiry {
         this.enquiryContents = enquiryContents;
     }
 
+    public void setResponse(String response) {
+        this.managerResponse = response;
+    }
+
+    public String readResponse(){
+        return managerResponse;
+    }
+
     // Getter method to return unique ID of enquiry
     public int readID(){
         return enquiryID;
@@ -19,9 +27,8 @@ public class Enquiry {
         return enquiryContents;
     }
 
-    public void setResponse(String managerResponse) {
-        this.managerResponse = managerResponse;
-    }
+
+
 
 } // end of class Enquiry
 

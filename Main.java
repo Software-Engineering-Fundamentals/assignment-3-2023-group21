@@ -1,28 +1,33 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         createEnquiry();
-        respondToEnquiry();
     }
 
     // Instantiates User class and creates user enquiry
     public static void createEnquiry(){
         
-        Manager manager = new Manager(); // Create one manager instance 
+        // Create one manager instance 
+        Manager manager = new Manager(); 
         
-        User newUser = new User(manager);
+        // User newUser = new User(manager);
+        User newUser = new User();
+        
+        // Creates enquiry instance, saves to list of enquiries in User
+        ArrayList<Enquiry> enquiryList = newUser.lodgeEnquiry(); 
 
-        newUser.lodgeEnquiry();
+        // Searches for user enquiries yet to be addressed by Mananger 
+        ArrayList<Enquiry> openEnquiries = manager.searchForOpenEnquiries(enquiryList);
 
-        int enquiryID = newUser.getEnquiryID();
+        // Manager retrieves messages of unanswered enquiries
+        manager.getEnquiryContents(openEnquiries);
 
-        // Pass the enquiryID to the Manager to search for the enquiry
-        manager.searchEnquiries(enquiryID);
+        // Manager responds to enquiries, updates response field for enquiry instance associated with User object
+        manager.respondToEnquiry(openEnquiries);
+
 
     }
 
-    // Instantiates Manager class and responds to enquiry
-    public static void respondToEnquiry(){
-
-    }
 
 }
