@@ -1,3 +1,4 @@
+package Group21.src.main.java.model;
 
 public class Enquiry {
     private int enquiryID; // unique identifier for enquiry

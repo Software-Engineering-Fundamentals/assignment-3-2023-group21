@@ -1,3 +1,5 @@
+package Group21.src.main.java.model;
+
 public class Administrator extends Account {
     
     

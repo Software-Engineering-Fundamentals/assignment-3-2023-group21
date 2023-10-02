@@ -1,3 +1,5 @@
+package Group21.src.main.java.model;
+
 import java.util.ArrayList;
 
 public class User {

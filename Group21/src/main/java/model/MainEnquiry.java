@@ -1,6 +1,8 @@
+package Group21.src.main.java.model;
+
 import java.util.ArrayList;
 
-public class Main {
+public class MainEnquiry {
     public static void main(String[] args) {
         createEnquiry();
     }
@@ -25,7 +27,6 @@ public class Main {
 
         // Manager responds to enquiries, updates response field for enquiry instance associated with User object
         manager.respondToEnquiry(openEnquiries);
-
 
     }
 
