@@ -14,34 +14,49 @@ public class Manager extends Administrator{
 
     // Searches for unanswered user enquiries
     public ArrayList<Enquiry> searchForOpenEnquiries(ArrayList<Enquiry> userEnquiries){
-        
+        // manager method to search the unaddressed enquiries made by users
+
+        // initialising the new array to store enquiries that are yet to be resolved
         ArrayList<Enquiry> openEnquiries = new ArrayList<>();
 
+        System.out.println("Manager Searching Enquiries");
+        // iterate over each enquiry of the input array
         for (Enquiry enquiry: userEnquiries) {
-            
-            if (enquiry.readEnquiry() == null) {
-                openEnquiries.add(enquiry);
-            }
+
+            openEnquiries.add(enquiry);
+
         }
+
         return openEnquiries;
     }
 
-    public void getEnquiryContents(ArrayList<Enquiry> openEnquiries){
-            
-        for (Enquiry enquiry: openEnquiries) {
-            enquiry.readEnquiry();
-        }
+    public Enquiry getEnquiryContents(ArrayList<Enquiry> openEnquiries, int enquiryID){
+        // manager method for getting the string contents of the user enquiry that is selected
 
+        System.out.println("Reading Unresolved Enquiry, ID number: " + enquiryID);
+
+        // extracting the enquiry contents based on the enquiry ID selected
+        Enquiry enquiry = openEnquiries.get(enquiryID - 1);
+
+        return enquiry;
     }
 
-    public void respondToEnquiry(ArrayList<Enquiry> openEnquiries){
+    public void respondToEnquiry(Enquiry enquiry){
+        // manager method to respond to a chosen enquiry
 
-        for (Enquiry enquiry: openEnquiries) {
-        
-            enquiry.readEnquiry();
-            String response = "---Manager response to enquiry---";
-            enquiry.setResponse(response);
+        System.out.println("Responding to Enquiry: " + enquiry);
+
+        String response = "---Manager response to enquiry---";
+        System.out.println("Response Contents Set: " + response);
+
+        int status = enquiry.setResponse(response);
+
+        if (status == 1) {
+            System.out.println("Response Successful");
+        } else {
+            System.out.println("Response Not Successful");
         }
+
     }
 
 

@@ -12,11 +12,18 @@ public class User {
     // }
 
     public ArrayList<Enquiry> lodgeEnquiry(){
+        // method to create a new enquiry in the system to be addressed by a manager
 
+        // setting contents and a generated unique identifier for the enquiry
         String userEnquiry = "...This is an enquiry created by a User...";
         int enquiryID = userEnquiries.size() + 1;
+        System.out.println("Enquiry Contents Set:" + userEnquiry);
+
+        // creating a new enquiry object based on the contents
         Enquiry newEnquiry = new Enquiry(enquiryID, userEnquiry);
         userEnquiries.add(newEnquiry);
+        System.out.println("Enquiry Created");
+
         return userEnquiries;
         // manager.receiveEnquiries(userEnquiries);
     }
