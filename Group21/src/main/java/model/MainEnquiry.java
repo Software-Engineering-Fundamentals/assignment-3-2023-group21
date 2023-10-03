@@ -31,7 +31,7 @@ public class MainEnquiry {
         Enquiry enquiry = manager.getEnquiryContents(openEnquiries, enquiryID);
 
         // Manager responds to enquiries, updates response field for enquiry instance associated with User object
-        manager.respondToEnquiry(enquiry);
+        manager.answerEnquiry(enquiry);
 
     }
 

@@ -10,12 +10,8 @@ public class Enquiry {
         this.enquiryContents = enquiryContents;
     }
 
-    public int setResponse(String response) {
+    public void setResponse(String response) {
         this.managerResponse = response;
-
-        // dummy value returning status of the returned response
-        // in this instance returning success
-        return 1;
     }
 
     public String readResponse(){

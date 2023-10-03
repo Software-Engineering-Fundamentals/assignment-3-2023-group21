@@ -20,7 +20,8 @@ public class Manager extends Administrator{
         ArrayList<Enquiry> openEnquiries = new ArrayList<>();
 
         System.out.println("Manager Searching Enquiries");
-        // iterate over each enquiry of the input array
+        // iterate over each enquiry of the input array, to simplify, we will assume
+        // all enquiries have not been seen yet
         for (Enquiry enquiry: userEnquiries) {
 
             openEnquiries.add(enquiry);
@@ -41,7 +42,7 @@ public class Manager extends Administrator{
         return enquiry;
     }
 
-    public void respondToEnquiry(Enquiry enquiry){
+    public void answerEnquiry(Enquiry enquiry){
         // manager method to respond to a chosen enquiry
 
         System.out.println("Responding to Enquiry: " + enquiry);
@@ -49,13 +50,8 @@ public class Manager extends Administrator{
         String response = "---Manager response to enquiry---";
         System.out.println("Response Contents Set: " + response);
 
-        int status = enquiry.setResponse(response);
-
-        if (status == 1) {
-            System.out.println("Response Successful");
-        } else {
-            System.out.println("Response Not Successful");
-        }
+        enquiry.setResponse(response);
+        System.out.println("Response Successful");
 
     }
 
