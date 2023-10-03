@@ -1,6 +1,6 @@
 package Group21.src.main.java.model;
 
-public class Administrator {
+public class Administrator extends User{
     
     
     public void manageCourseAccess(){}

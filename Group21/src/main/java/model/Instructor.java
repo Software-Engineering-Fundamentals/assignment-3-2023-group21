@@ -1,6 +1,8 @@
 package Group21.src.main.java.model;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Calendar;
 public class Instructor extends Administrator{
 
 
@@ -39,6 +41,11 @@ public class Instructor extends Administrator{
         Payment payment = new Payment(paymentDetails);
         int transactionID = 1;
         payment.transactionID = transactionID;
+
+        Date currentDate = Calendar.getInstance().getTime();
+        System.out.println("Payment Date: " + currentDate);
+
+        payment.date = currentDate;
 
         return transactionID;
     }
